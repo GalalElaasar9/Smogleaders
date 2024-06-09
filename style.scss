@@ -187,7 +187,7 @@ section{
     .text{
       flex: 0 0 45%;
       h3{
-        @include title-text(4.5rem);
+        @include title-text(3rem);
         font-weight: 600;
       }
       p{
@@ -228,7 +228,8 @@ section{
       }
       .text{
         h3{
-          @include title-text(2.5rem)
+          @include title-text(2rem);
+          line-height: 1.7;
         }
       }
     }
@@ -252,7 +253,7 @@ section{
     .text{
       flex: 0 0 45%;
       h3{
-        @include title-text(4.5rem);
+        @include title-text(3rem);
         font-weight: 600;
       }
       p{
@@ -299,95 +300,6 @@ section{
     }
   }
 }
-//------------------------------------------------------ Start of services-------------------------------------//
-.offers{
-    background-color: $light-bg;
-    .heading{
-      font-weight: 600;
-      span{
-          color: $blue;
-      }
-    }
-    .content{
-      gap: 15px;
-      flex-wrap: wrap;
-      .Inf{
-        flex: 0 0 32%;
-        p{
-          @include graph-text(1.5rem)
-        }
-      }
-      .info{
-        text-align: center;
-        margin-bottom: 4rem;
-        border: $border;
-        margin-bottom: 10px;
-        box-shadow: $box-shadow;
-        padding: 0 2rem 2rem;
-        border-radius: 10px;
-        background-color: $white;
-        // &:hover{
-        //   background-color: $black;
-        //   h3 , p{
-        //   color: $white;
-        //   }
-        // }
-        .image{
-          width: 200px;
-          height: 100px;
-          object-fit: cover;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          margin: auto;
-          img{
-            width: 100%;
-            margin-bottom: 0.5rem;
-          }
-        }
-        .text{
-          h3{
-            font-size: 1.5rem;
-          }
-          strong{
-            @include title-text(3rem);
-            color: $blue;
-          }
-        }
-      }
-    }
-}
-
-@media (max-width:767px) {
-  .offers{
-    margin-top: 0;
-    .content{
-      .Inf{
-        flex: 0 0 100% !important;
-        .info{
-          margin-bottom: 10px;
-        }
-      }
-    }
-  }
-}
-@media (max-width:991px) {
-  .offers{
-    margin-top: 0;
-    .content{
-      .Inf{
-        flex: 0 0 48%;
-        .info{
-          margin-bottom: 10px;
-        }
-        p{
-          font-size: 1.25rem;
-        }
-      }
-    }
-  }
-}
-//------------------------------------------------------ end of services-------------------------------------//
 //------------------------------------------------------start of Gallery ------------------------------------//
 .Gallery{
   margin-bottom: 1rem;
@@ -399,13 +311,13 @@ section{
   }
   .gallery-container{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
     gap: 15px;
     .box{
       overflow: hidden;
-      flex:0 0 24%;
+      flex:0 0 32%;
       height: 207px;
       object-fit: cover;
       border-radius: 10px;
@@ -443,46 +355,95 @@ section{
   }
 }
 //------------------------------------------------------end of Gallery ------------------------------------//
-//---------------------------------------------------- start of facilities----------------------------------//
-// .facilities{
-//     background-color: $light-bg;
-//     .heading{
-//         font-weight: 600;
-//         span{
-//         color: $blue;
-//         }
-//     }
-//     .info{
-//         text-align: center;
-//         margin-bottom: 4rem;
-//         border: $border;
-//         box-shadow: $box-shadow;
-//         padding: 3rem;
-//         border-radius: 10px;
-//         background-color: $white;
+//------------------------------------------------------ Start of offers-------------------------------------//
+.offers{
+    background-color: $light-bg;
+    .heading{
+      font-weight: 600;
+      span{
+        color: $blue;
+      }
+    }
+    .content{
+      gap: 15px;
+      flex-wrap: wrap;
+      .info{
+        flex: 0 0 48%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        .image{
+          width: 500px;
+          img{
+            width: 100%;
+          }
+        }
+        h3{
+          max-width: 500px;
+          width: 100%;
+          font-size: 2rem;
+          text-transform: capitalize;
+          color: #334;
+          font-weight: 900;
+          text-align: center;
+          margin-bottom: 20px;
+        }
+        p{
+          max-width: 500px;
+          width: 100%;
+          margin-top: 10px;
+          @include graph-text(1.5rem);
+          margin-bottom: 0;
+        }
+      }
+    }
+}
 
-//         &:hover{
-//             background-color: $black;
-//             h3 , p{
-//             color: $white;
-//             }
-//         }
-//     img{
-//         height: 10rem;
-//         margin-bottom: 0.5rem;
-//     }
-//     h3{
-//         @include title-text(2rem);
-//         font-weight: 600;
-//         padding: 1rem 0;
-        
-//     }
-//     p{
-//         @include graph-text(1.4rem);
-//     }
-//     }
-// }
-//---------------------------------------------------- end of facilities----------------------------------//
+@media (max-width:767px) {
+  .offers{
+    margin-top: 0;
+    .content{
+      flex-wrap: wrap !important;
+      .info{
+        margin-bottom: 10px;
+        &:first-of-type{
+          display: none;
+        }
+        .image{
+          width: 350px;
+        }
+        h3{
+          line-height: 1.7;
+          margin-bottom: 5px;
+          max-width: 350px;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+@media (max-width:991px) {
+  .offers{
+    margin-top: 0;
+    .content{
+      flex-wrap: nowrap;
+      .info{
+        margin-bottom: 10px;
+        .image{
+          width: 350px;
+        }
+        h3{
+          line-height: 1.7;
+          margin-bottom: 5px;
+          max-width: 350px;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+//------------------------------------------------------ end of offers-------------------------------------//
 //---------------------------------------------------- start of contact----------------------------------//
 .contact{
   .heading{

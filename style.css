@@ -172,7 +172,7 @@ section {
   flex: 0 0 45%;
 }
 .Home .content .text h3 {
-  font-size: 4.5rem;
+  font-size: 3rem;
   text-transform: capitalize;
   color: #334;
   font-weight: 600;
@@ -207,9 +207,10 @@ section {
     height: auto;
   }
   .Home .content .text h3 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     text-transform: capitalize;
     color: #334;
+    line-height: 1.7;
   }
 }
 .About {
@@ -233,7 +234,7 @@ section {
   flex: 0 0 45%;
 }
 .About .content .text h3 {
-  font-size: 4.5rem;
+  font-size: 3rem;
   text-transform: capitalize;
   color: #334;
   font-weight: 600;
@@ -277,86 +278,6 @@ section {
     color: #334;
   }
 }
-.offers {
-  background-color: #f5f5f5;
-}
-.offers .heading {
-  font-weight: 600;
-}
-.offers .heading span {
-  color: #2163ff;
-}
-.offers .content {
-  gap: 15px;
-  flex-wrap: wrap;
-}
-.offers .content .Inf {
-  flex: 0 0 32%;
-}
-.offers .content .Inf p {
-  font-size: 1.5rem;
-  line-height: 2;
-  color: #777;
-}
-.offers .content .info {
-  text-align: center;
-  margin-bottom: 4rem;
-  border: 0.2rem solid #334;
-  margin-bottom: 10px;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-  padding: 0 2rem 2rem;
-  border-radius: 10px;
-  background-color: #fff;
-}
-.offers .content .info .image {
-  width: 200px;
-  height: 100px;
-  -o-object-fit: cover;
-     object-fit: cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
-}
-.offers .content .info .image img {
-  width: 100%;
-  margin-bottom: 0.5rem;
-}
-.offers .content .info .text h3 {
-  font-size: 1.5rem;
-}
-.offers .content .info .text strong {
-  font-size: 3rem;
-  text-transform: capitalize;
-  color: #334;
-  color: #2163ff;
-}
-
-@media (max-width: 767px) {
-  .offers {
-    margin-top: 0;
-  }
-  .offers .content .Inf {
-    flex: 0 0 100% !important;
-  }
-  .offers .content .Inf .info {
-    margin-bottom: 10px;
-  }
-}
-@media (max-width: 991px) {
-  .offers {
-    margin-top: 0;
-  }
-  .offers .content .Inf {
-    flex: 0 0 48%;
-  }
-  .offers .content .Inf .info {
-    margin-bottom: 10px;
-  }
-  .offers .content .Inf p {
-    font-size: 1.25rem;
-  }
-}
 .Gallery {
   margin-bottom: 1rem;
 }
@@ -368,14 +289,14 @@ section {
 }
 .Gallery .gallery-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   gap: 15px;
 }
 .Gallery .gallery-container .box {
   overflow: hidden;
-  flex: 0 0 24%;
+  flex: 0 0 32%;
   height: 207px;
   -o-object-fit: cover;
      object-fit: cover;
@@ -405,6 +326,95 @@ section {
   }
   .Gallery .gallery-container .box {
     flex: 0 0 31%;
+  }
+}
+.offers {
+  background-color: #f5f5f5;
+}
+.offers .heading {
+  font-weight: 600;
+}
+.offers .heading span {
+  color: #2163ff;
+}
+.offers .content {
+  gap: 15px;
+  flex-wrap: wrap;
+}
+.offers .content .info {
+  flex: 0 0 48%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.offers .content .info .image {
+  width: 500px;
+}
+.offers .content .info .image img {
+  width: 100%;
+}
+.offers .content .info h3 {
+  max-width: 500px;
+  width: 100%;
+  font-size: 2rem;
+  text-transform: capitalize;
+  color: #334;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.offers .content .info p {
+  max-width: 500px;
+  width: 100%;
+  margin-top: 10px;
+  font-size: 1.5rem;
+  line-height: 2;
+  color: #777;
+  margin-bottom: 0;
+}
+
+@media (max-width: 767px) {
+  .offers {
+    margin-top: 0;
+  }
+  .offers .content {
+    flex-wrap: wrap !important;
+  }
+  .offers .content .info {
+    margin-bottom: 10px;
+  }
+  .offers .content .info:first-of-type {
+    display: none;
+  }
+  .offers .content .info .image {
+    width: 350px;
+  }
+  .offers .content .info h3 {
+    line-height: 1.7;
+    margin-bottom: 5px;
+    max-width: 350px;
+    width: 100%;
+  }
+}
+@media (max-width: 991px) {
+  .offers {
+    margin-top: 0;
+  }
+  .offers .content {
+    flex-wrap: nowrap;
+  }
+  .offers .content .info {
+    margin-bottom: 10px;
+  }
+  .offers .content .info .image {
+    width: 350px;
+  }
+  .offers .content .info h3 {
+    line-height: 1.7;
+    margin-bottom: 5px;
+    max-width: 350px;
+    width: 100%;
   }
 }
 .contact .heading {
