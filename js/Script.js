@@ -30,8 +30,6 @@ let scrolling = $(window).scrollTop();
     scrolling = $(window).scrollTop();
   });
 
-
-
 function counterUp(element , limit , speed){
   let counter = 0;
 
